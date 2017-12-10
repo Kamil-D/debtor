@@ -1,0 +1,10 @@
+1. Main view
+2. Add new debtor view
+3. Login view / registration view
+3. Spring Boot - basic implementation
+4. Spring Data (???) + choosen database provider (Oracle/PostgreSQL or just SQLite)
+5. Database backup (to .sql file; remember about security!)
+6. Export to excel / import from excel
+7. Controller for all the functionalities
+8. DAO/Repository
+9. Security
