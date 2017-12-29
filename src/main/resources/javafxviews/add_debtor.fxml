@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<?import javafx.scene.control.Button?>
+<BorderPane maxHeight="-Infinity"
+            maxWidth="-Infinity"
+            minHeight="-Infinity"
+            minWidth="-Infinity"
+            prefHeight="520.0"
+            prefWidth="800.0"
+            xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.debtor.dzialek.controller.AddDebtorController">
+
+    <top>
+
+        <HBox prefHeight="420.0" prefWidth="800.0">
+
+            <VBox prefHeight="420.0" prefWidth="400.0" BorderPane.alignment="CENTER_LEFT">
+
+                <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="150.0" spacing="10.0">
+                    <VBox alignment="CENTER_RIGHT" prefHeight="60.0" prefWidth="120.0">
+                        <Label alignment="TOP_RIGHT" text="Numer umowy:" />
+                    </VBox>
+                    <TextField fx:id="contractNumberField" />
+                    <padding>
+                        <Insets bottom="20.0" left="20.0" right="10.0" top="20.0" />
+                    </padding>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="150.0" spacing="10.0">
+                    <VBox alignment="CENTER_RIGHT" prefHeight="60.0" prefWidth="120.0">
+                        <Label alignment="TOP_RIGHT" text="Imię:" />
+                    </VBox>
+                    <TextField fx:id="firstNameField" />
+                    <padding>
+                        <Insets bottom="20.0" left="20.0" right="10.0" top="20.0" />
+                    </padding>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="150.0" spacing="10.0">
+                    <VBox alignment="CENTER_RIGHT" prefHeight="60.0" prefWidth="120.0">
+                        <Label text="Nazwisko:" />
+                    </VBox>
+                    <TextField fx:id="lastNameField" />
+                    <padding>
+                        <Insets bottom="20.0" left="20.0" right="10.0" top="20.0" />
+                    </padding>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="150.0" spacing="10.0">
+                    <VBox alignment="CENTER_RIGHT" prefHeight="60.0" prefWidth="120.0">
+                        <Label text="Numer telefonu:" />
+                    </VBox>
+                        <TextField fx:id="phoneNumberField" />
+                        <padding>
+                            <Insets bottom="20.0" left="20.0" right="10.0" top="20.0" />
+                        </padding>
+                    </HBox>
+                    <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="150.0" spacing="10.0">
+                        <VBox alignment="CENTER_RIGHT" prefHeight="60.0" prefWidth="120.0">
+                            <Label text="Notatka:" />
+                        </VBox>
+                        <TextField fx:id="noteField" />
+                        <padding>
+                            <Insets bottom="20.0" left="20.0" right="10.0" top="20.0" />
+                        </padding>
+                    </HBox>
+
+            </VBox>
+
+            <Separator orientation="VERTICAL" />
+
+            <VBox alignment="TOP_CENTER" prefHeight="420.0" prefWidth="400.0">
+
+                <VBox alignment="TOP_CENTER" prefHeight="210.0" prefWidth="400.0">
+                    <Label alignment="TOP_CENTER" text="Adres korespondencyjny">
+                        <font>
+                            <Font size="17.0" />
+                        </font>
+                        <VBox.margin>
+                            <Insets bottom="10.0" top="20.0"/>
+                        </VBox.margin>
+                    </Label>
+
+                    <TextField fx:id="streetFirstField">
+                        <VBox.margin>
+                            <Insets bottom="20.0" />
+                        </VBox.margin></TextField>
+
+                    <TextField fx:id="streetNumberFirstField">
+                        <VBox.margin>
+                            <Insets bottom="20.0" />
+                        </VBox.margin></TextField>
+
+                    <HBox alignment="CENTER_LEFT" prefWidth="350.0" spacing="10.0">
+                        <TextField fx:id="codeFirstField" prefWidth="100.0">
+                            <VBox.margin>
+                                <Insets bottom="20.0" />
+                            </VBox.margin></TextField>
+
+                        <TextField fx:id="cityFirstField" prefWidth="250.0"/>
+                    </HBox>
+
+                    <padding>
+                        <Insets bottom="20.0" left="50.0" right="50.0" top="10.0" />
+                    </padding>
+                </VBox>
+
+
+                <Separator/>
+
+                <VBox alignment="TOP_CENTER" prefHeight="210.0" prefWidth="400.0">
+                    <Label alignment="TOP_CENTER" text="Adres zamieszkania">
+                        <font>
+                            <Font size="17.0" />
+                        </font>
+                        <VBox.margin>
+                            <Insets bottom="10.0" />
+                        </VBox.margin>
+                    </Label>
+
+                    <TextField fx:id="streetSecondField">
+                        <VBox.margin>
+                            <Insets bottom="20.0" />
+                        </VBox.margin></TextField>
+
+                    <TextField fx:id="streetNumberSecondField">
+                        <VBox.margin>
+                            <Insets bottom="20.0" />
+                        </VBox.margin></TextField>
+
+                    <HBox alignment="CENTER_LEFT" prefWidth="350.0" spacing="10.0">
+                        <TextField fx:id="codeSecondField" prefWidth="100.0">
+                            <VBox.margin>
+                                <Insets bottom="20.0" />
+                            </VBox.margin></TextField>
+
+                        <TextField fx:id="citySecondField" prefWidth="250.0"/>
+                    </HBox>
+
+                    <padding>
+                        <Insets bottom="20.0" left="50.0" right="50.0" top="10.0" />
+                    </padding>
+
+                </VBox>
+
+            </VBox>
+
+        </HBox>
+
+    </top>
+
+    <center>
+
+        <VBox maxHeight="100.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+            <Separator/>
+            <HBox alignment="CENTER" prefHeight="100.0" maxHeight="100.0" spacing="10.0">
+                <Button fx:id="addDebtorButton" cache="true" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="40.0" prefWidth="110" text="Dodaj">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Button>
+            </HBox>
+        </VBox>
+
+    </center>
+
+</BorderPane>
