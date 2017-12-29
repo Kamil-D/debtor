@@ -29,8 +29,16 @@ public class Address {
     @Type(type = "text")
     private String streetNumber;
 
+    @Column(nullable = false)
+    @Type(type = "text")
+    private String addressType;
+
     @ManyToOne(cascade = CascadeType.ALL)
     private Debtor debtor;
+
+
+    // Constructor
+    public Address() {  }
 
 
     public int getId() {
@@ -71,6 +79,14 @@ public class Address {
 
     public void setStreetNumber(String streetNumber) {
         this.streetNumber = streetNumber;
+    }
+
+    public String getAddressType() {
+        return addressType;
+    }
+
+    public void setAddressType(String addressType) {
+        this.addressType = addressType;
     }
 
     public Debtor getDebtor() {

@@ -16,11 +16,11 @@ public class Debtor {
 
     @Column(nullable = false)
     @Type(type = "text")
-    private String name;
+    private String firstName;
 
     @Column(nullable = false)
     @Type(type = "text")
-    private String surname;
+    private String lastName;
 
     @Column(nullable = false)
     @Type(type = "text")
@@ -34,6 +34,14 @@ public class Debtor {
     private Set<Address> songHashSet = new HashSet<>(0);
 
 
+    // Constructor
+    public Debtor(String contractNumber, String firstName, String lastName) {
+        this.contractNumber = contractNumber;
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
+
     public String getContractNumber() {
         return contractNumber;
     }
@@ -42,20 +50,20 @@ public class Debtor {
         this.contractNumber = contractNumber;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getSurname() {
-        return surname;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setSurname(String surname) {
-        this.surname = surname;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getPhoneNumber() {

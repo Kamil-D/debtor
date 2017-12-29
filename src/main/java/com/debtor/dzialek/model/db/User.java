@@ -2,11 +2,11 @@ package com.debtor.dzialek.model.db;
 
 import org.hibernate.annotations.Type;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
+@Entity
 public class User {
 
     @Id
@@ -26,7 +26,13 @@ public class User {
     @Type(type = "text")
     private String emailAddress;
 
+    @OneToMany(targetEntity = Debtor.class)
+    private Set<Debtor> songHashSet = new HashSet<>(0);
+
     // todo - add privileges
+
+    // Constructor
+    public User() { }
 
 
     public int getId() {
@@ -59,5 +65,13 @@ public class User {
 
     public void setEmailAddress(String emailAddress) {
         this.emailAddress = emailAddress;
+    }
+
+    public Set<Debtor> getSongHashSet() {
+        return songHashSet;
+    }
+
+    public void setSongHashSet(Set<Debtor> songHashSet) {
+        this.songHashSet = songHashSet;
     }
 }
