@@ -5,13 +5,14 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.stage.Stage;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import static com.debtor.dzialek.view.util.FxmlUtil.openAddNewDebtorWindow;
+
 @FXMLController
-public class DebtorController implements Initializable{
+public class MainDebtorController implements Initializable{
 
     @FXML
     Button newDebtorButton;
@@ -20,13 +21,8 @@ public class DebtorController implements Initializable{
     public void initialize(URL location, ResourceBundle resources) {
 
         newDebtorButton.setOnAction((ActionEvent e) -> {
-            addNewDebtor();
+            openAddNewDebtorWindow();
         });
     }
 
-    private void addNewDebtor() {
-        Stage stage = new Stage();
-        //Fill stage with content
-        stage.show();
-    }
 }
