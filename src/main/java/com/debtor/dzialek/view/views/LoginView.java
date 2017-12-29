@@ -1,4 +1,4 @@
-package com.debtor.dzialek.view;
+package com.debtor.dzialek.view.views;
 
 import de.felixroske.jfxsupport.AbstractFxmlView;
 import de.felixroske.jfxsupport.FXMLView;
