@@ -1,10 +1,16 @@
-1. Main view
-2. Add new debtor view
-3. Login view / registration view
-3. Spring Boot - basic implementation
-4. Spring Data (???) + choosen database provider (Oracle/PostgreSQL or just SQLite)
-5. Database backup (to .sql file; remember about security!)
-6. Export to excel / import from excel
-7. Controller for all the functionalities
-8. DAO/Repository
-9. Security
+1. Main view (****)
+2. Add New Debtor view (****)
+3. StateManager - for views (***)
+4. Spring Boot - basic configuration (****)
+5. Spring Data (???) + DAO/Repository + choosen database provider (Oracle/PostgreSQL or simple SQLite) ()
+6. Main View Controller:
+    - search + filters (using Predicates)
+    - deleting debtor
+    - displaying debtor details + editing (with validation)
+7. Add New Debtor Controller
+    - validation for all fields
+    - frontend connected with validation (alerts and etc.) + JavaFX Bindings feature
+8. Security
+9. Login/Registration view (***)
+10. Logger
+11. CSS
