@@ -1,17 +1,16 @@
 package com.debtor.dzialek;
 
+import com.debtor.dzialek.view.util.FxmlUtil;
 import javafx.application.Application;
-import com.debtor.dzialek.view.DebtorMainView;
-import de.felixroske.jfxsupport.AbstractJavaFxApplicationSupport;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
+
+import static com.debtor.dzialek.model.enums.ViewFxmlPath.MAIN_VIEW;
 
 @ComponentScan
 @EnableAutoConfiguration
@@ -28,18 +27,16 @@ public class Main extends Application {
     @Override
     public void init() throws Exception {
         springContext = SpringApplication.run(Main.class);
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/javafxviews/debtormain.fxml"));
-        fxmlLoader.setControllerFactory(springContext::getBean);
-        rootNode = fxmlLoader.load();
+        FxmlUtil.init(springContext);
+//        FxmlUtil.loadFxml(DEBTOR_MAIN_FXML);
+//        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(DEBTOR_MAIN_FXML));
+//        fxmlLoader.setControllerFactory(springContext::getBean);
+        rootNode = FxmlUtil.loadFxml(MAIN_VIEW.getFxmlPath());
     }
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        primaryStage.setTitle("Kredytobiorcy");
-        primaryStage.setScene(new Scene(rootNode, 1200, 800));
-        primaryStage.setResizable(false);
-        primaryStage.centerOnScreen();
-        primaryStage.show();
+        FxmlUtil.openMainStageForGivenScene(primaryStage, rootNode);
     }
 
 //    @Override
