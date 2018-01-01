@@ -12,6 +12,8 @@ import org.springframework.context.ConfigurableApplicationContext;
 import java.io.IOException;
 
 import static com.debtor.dzialek.model.enums.ViewFxmlPath.ADD_DEBTOR;
+import static com.debtor.dzialek.util.MessageProvider.getMessage;
+import static com.debtor.dzialek.util.MessageProvider.getResourceBundle;
 
 public class FxmlUtil {
 
@@ -26,20 +28,21 @@ public class FxmlUtil {
     public static Pane loadFxml(String fxmlPath){
         FXMLLoader fxmlLoader = new FXMLLoader(FxmlUtil.class.getResource(fxmlPath));
         fxmlLoader.setControllerFactory(springContext::getBean);
+        fxmlLoader.setResources(getResourceBundle());
         try {
-            log.info("fxml resource from %s properly loaded", fxmlPath);
+            log.info("fxml resource from {} properly loaded", fxmlPath);
             return fxmlLoader.load();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        log.warn("loading fxml resource from %s failed!", fxmlPath);
+        log.warn("loading fxml resource from {} failed!", fxmlPath);
         return null;
     }
 
-    public static void openAddNewDebtorWindow() {
+    public static void openAddNewDebtorStage() {
         Parent rootNode = FxmlUtil.loadFxml(ADD_DEBTOR.getFxmlPath());
         Stage stage = new Stage();
-        stage.setTitle("Nowy Kredytobiorca");
+        stage.setTitle(getMessage("view.add.debtor.window.title"));
         stage.setScene(new Scene(rootNode, 800, 550));
         stage.setResizable(false);
         stage.centerOnScreen();
@@ -47,7 +50,7 @@ public class FxmlUtil {
     }
 
     public static void openMainStageForGivenScene(Stage primaryStage, Parent rootNode){
-        primaryStage.setTitle("Kredytobiorcy");
+        primaryStage.setTitle(getMessage("view.main.window.title"));
         primaryStage.setScene(new Scene(rootNode, 1200, 800));
         primaryStage.setResizable(false);
         primaryStage.centerOnScreen();

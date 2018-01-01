@@ -11,6 +11,8 @@ import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 
 import static com.debtor.dzialek.model.enums.ViewFxmlPath.MAIN_VIEW;
+import static com.debtor.dzialek.util.MessageProvider.initializeMessageSource;
+import static com.debtor.dzialek.util.MessageProvider.initializeResourceBundleForFxml;
 
 @ComponentScan
 @EnableAutoConfiguration
@@ -27,6 +29,8 @@ public class Main extends Application {
     @Override
     public void init() throws Exception {
         springContext = SpringApplication.run(Main.class);
+        initializeMessageSource();
+        initializeResourceBundleForFxml();
         FxmlUtil.init(springContext);
 //        FxmlUtil.loadFxml(DEBTOR_MAIN_FXML);
 //        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(DEBTOR_MAIN_FXML));
