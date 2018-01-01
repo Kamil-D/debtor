@@ -13,14 +13,14 @@
 
         <VBox alignment="CENTER" prefHeight="250.0" prefWidth="450.0" spacing="10.0">
             <HBox alignment="CENTER" prefHeight="50.0" prefWidth="450.0" spacing="10.0">
-                <Label text="Login:"/>
+                <Label text="%view.login.window.login.label"/>
                 <TextField fx:id="usernameField" />
             </HBox>
             <HBox alignment="CENTER" prefHeight="50.0" prefWidth="450.0" spacing="10.0">
-                <Label text="Hasło:"/>
-                <TextField fx:id="passwordField" />
+                <Label text="%view.login.window.password.label"/>
+                <PasswordField fx:id="passwordField" />
             </HBox>
-            <Button fx:id="loginButton" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="30.0" prefWidth="132" text="Zaloguj">
+            <Button fx:id="loginButton" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="30.0" prefWidth="132" text="%view.login.window.login.button">
                 <font>
                     <Font size="15.0" />
                 </font>
@@ -33,7 +33,7 @@
 
         <VBox alignment="TOP_CENTER" prefHeight="60.0" prefWidth="450.0" spacing="10.0">
             <Separator/>
-            <Button fx:id="registrationButton" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="30.0" prefWidth="132" text="Zarejestruj">
+            <Button fx:id="registrationButton" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="30.0" prefWidth="132" text="%view.login.window.register.button">
                 <font>
                     <Font size="15.0" />
                 </font>

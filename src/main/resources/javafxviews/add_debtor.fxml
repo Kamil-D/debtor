@@ -10,6 +10,7 @@
 <?import javafx.scene.text.Font?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
 <BorderPane maxHeight="-Infinity"
             maxWidth="-Infinity"
             minHeight="-Infinity"
@@ -27,7 +28,7 @@
 
                 <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="150.0" spacing="10.0">
                     <VBox alignment="CENTER_RIGHT" prefHeight="60.0" prefWidth="120.0">
-                        <Label alignment="TOP_RIGHT" text="Numer umowy:" />
+                        <Label text="%view.add.debtor.window.conractNumber.label" />
                     </VBox>
                     <TextField fx:id="contractNumberField" />
                     <padding>
@@ -36,7 +37,7 @@
                 </HBox>
                 <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="150.0" spacing="10.0">
                     <VBox alignment="CENTER_RIGHT" prefHeight="60.0" prefWidth="120.0">
-                        <Label alignment="TOP_RIGHT" text="Imię:" />
+                        <Label text="%view.add.debtor.window.firstName.label" />
                     </VBox>
                     <TextField fx:id="firstNameField" />
                     <padding>
@@ -45,7 +46,7 @@
                 </HBox>
                 <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="150.0" spacing="10.0">
                     <VBox alignment="CENTER_RIGHT" prefHeight="60.0" prefWidth="120.0">
-                        <Label text="Nazwisko:" />
+                        <Label text="%view.add.debtor.window.surname.label" />
                     </VBox>
                     <TextField fx:id="lastNameField" />
                     <padding>
@@ -54,7 +55,7 @@
                 </HBox>
                 <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="150.0" spacing="10.0">
                     <VBox alignment="CENTER_RIGHT" prefHeight="60.0" prefWidth="120.0">
-                        <Label text="Numer telefonu:" />
+                        <Label text="%view.add.debtor.window.phone.label" />
                     </VBox>
                         <TextField fx:id="phoneNumberField" />
                         <padding>
@@ -63,9 +64,9 @@
                     </HBox>
                     <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="150.0" spacing="10.0">
                         <VBox alignment="CENTER_RIGHT" prefHeight="60.0" prefWidth="120.0">
-                            <Label text="Notatka:" />
+                            <Label text="%view.add.debtor.window.note.label" />
                         </VBox>
-                        <TextField fx:id="noteField" />
+                        <TextArea fx:id="noteField" prefRowCount="2" prefWidth="270.0" wrapText="true" />
                         <padding>
                             <Insets bottom="20.0" left="20.0" right="10.0" top="20.0" />
                         </padding>
@@ -78,7 +79,7 @@
             <VBox alignment="TOP_CENTER" prefHeight="420.0" prefWidth="400.0">
 
                 <VBox alignment="TOP_CENTER" prefHeight="210.0" prefWidth="400.0">
-                    <Label alignment="TOP_CENTER" text="Adres korespondencyjny">
+                    <Label alignment="TOP_CENTER" text="%view.add.debtor.window.adress1.label">
                         <font>
                             <Font size="17.0" />
                         </font>
@@ -87,23 +88,23 @@
                         </VBox.margin>
                     </Label>
 
-                    <TextField fx:id="streetFirstField">
+                    <TextField fx:id="streetFirstField" promptText="Ulica">
                         <VBox.margin>
                             <Insets bottom="20.0" />
                         </VBox.margin></TextField>
 
-                    <TextField fx:id="streetNumberFirstField">
+                    <TextField fx:id="streetNumberFirstField" promptText="Numer ulicy i mieszkania">
                         <VBox.margin>
                             <Insets bottom="20.0" />
                         </VBox.margin></TextField>
 
                     <HBox alignment="CENTER_LEFT" prefWidth="350.0" spacing="10.0">
-                        <TextField fx:id="codeFirstField" prefWidth="100.0">
+                        <TextField fx:id="codeFirstField" prefWidth="100.0" promptText="Kod pocztowy">
                             <VBox.margin>
                                 <Insets bottom="20.0" />
                             </VBox.margin></TextField>
 
-                        <TextField fx:id="cityFirstField" prefWidth="250.0"/>
+                        <TextField fx:id="cityFirstField" prefWidth="250.0" promptText="Miasto"/>
                     </HBox>
 
                     <padding>
@@ -115,7 +116,7 @@
                 <Separator/>
 
                 <VBox alignment="TOP_CENTER" prefHeight="210.0" prefWidth="400.0">
-                    <Label alignment="TOP_CENTER" text="Adres zamieszkania">
+                    <Label alignment="TOP_CENTER" text="%view.add.debtor.window.address2.label">
                         <font>
                             <Font size="17.0" />
                         </font>
@@ -124,23 +125,23 @@
                         </VBox.margin>
                     </Label>
 
-                    <TextField fx:id="streetSecondField">
+                    <TextField fx:id="streetSecondField" promptText="Ulica">
                         <VBox.margin>
                             <Insets bottom="20.0" />
                         </VBox.margin></TextField>
 
-                    <TextField fx:id="streetNumberSecondField">
+                    <TextField fx:id="streetNumberSecondField" promptText="Numer ulicy i mieszkania">
                         <VBox.margin>
                             <Insets bottom="20.0" />
                         </VBox.margin></TextField>
 
                     <HBox alignment="CENTER_LEFT" prefWidth="350.0" spacing="10.0">
-                        <TextField fx:id="codeSecondField" prefWidth="100.0">
+                        <TextField fx:id="codeSecondField" prefWidth="100.0" promptText="Kod pocztowy">
                             <VBox.margin>
                                 <Insets bottom="20.0" />
                             </VBox.margin></TextField>
 
-                        <TextField fx:id="citySecondField" prefWidth="250.0"/>
+                        <TextField fx:id="citySecondField" prefWidth="250.0" promptText="Miasto"/>
                     </HBox>
 
                     <padding>
@@ -160,7 +161,7 @@
         <VBox maxHeight="100.0" prefWidth="800.0" BorderPane.alignment="CENTER">
             <Separator/>
             <HBox alignment="CENTER" prefHeight="100.0" maxHeight="100.0" spacing="10.0">
-                <Button fx:id="addDebtorButton" cache="true" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="40.0" prefWidth="110" text="Dodaj">
+                <Button fx:id="addDebtorButton" onAction="#addDebtorOnAction" cache="true" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="40.0" prefWidth="110" text="%view.add.debtor.window.add.debtor.button">
                     <font>
                         <Font size="18.0" />
                     </font>
