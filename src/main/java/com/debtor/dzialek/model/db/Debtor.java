@@ -14,19 +14,19 @@ public class Debtor {
     @Column
     private String contractNumber;
 
-    @Column(nullable = false)
+    @Column(nullable = false, length = 30)
     @Type(type = "text")
     private String firstName;
 
-    @Column(nullable = false)
+    @Column(nullable = false, length = 30)
     @Type(type = "text")
     private String lastName;
 
-    @Column(nullable = false)
+    @Column(length = 9)
     @Type(type = "text")
     private String phoneNumber;
 
-    @Column(nullable = true)
+    @Column(length = 500)
     @Type(type = "text")
     private String note;
 

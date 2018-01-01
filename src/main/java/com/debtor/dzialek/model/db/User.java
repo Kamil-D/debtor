@@ -14,7 +14,7 @@ public class User {
     @Column
     private int id;
 
-    @Column(nullable = false)
+    @Column(nullable = false, length = 30)
     @Type(type = "text")
     private String username;
 
@@ -22,7 +22,7 @@ public class User {
     @Type(type = "text")
     private String password;
 
-    @Column(nullable = false)
+    @Column(nullable = false, length = 80)
     @Type(type = "text")
     private String emailAddress;
 

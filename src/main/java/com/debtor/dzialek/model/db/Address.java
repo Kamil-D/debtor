@@ -13,19 +13,19 @@ public class Address {
     @Column
     private int id;
 
-    @Column(nullable = false)
+    @Column(nullable = false, length = 70)
     @Type(type = "text")
     private String city;
 
-    @Column(nullable = false)
+    @Column(nullable = false, length = 6)
     @Type(type = "text")
     private String code;
 
-    @Column(nullable = false)
+    @Column(nullable = false, length = 50)
     @Type(type = "text")
     private String street;
 
-    @Column(nullable = false)
+    @Column(nullable = false, length = 10)
     @Type(type = "text")
     private String streetNumber;
 
