@@ -1,15 +1,19 @@
 package com.debtor.dzialek.controller;
 
+import com.debtor.dzialek.view.util.DialogsUtil;
 import de.felixroske.jfxsupport.FXMLController;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 
 import java.net.URL;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
-import static com.debtor.dzialek.view.util.FxmlUtil.openAddNewDebtorWindow;
+import static com.debtor.dzialek.view.util.FxmlUtil.openAddNewDebtorStage;
 
 @FXMLController
 public class MainDebtorController implements Initializable{
@@ -21,8 +25,16 @@ public class MainDebtorController implements Initializable{
     public void initialize(URL location, ResourceBundle resources) {
 
         newDebtorButton.setOnAction((ActionEvent e) -> {
-            openAddNewDebtorWindow();
+            openAddNewDebtorStage();
         });
+    }
+
+    public void closeApplication() {
+        Optional<ButtonType> result = DialogsUtil.confirmExitApplicationDialog();
+        if(result.get()==ButtonType.OK){
+            Platform.exit();
+            System.exit(0);
+        }
     }
 
 }
