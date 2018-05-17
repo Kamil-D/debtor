@@ -10,7 +10,6 @@ public class TextFieldLimiter {
 
 
     public static void addTextLimiterToTextField(final TextField textField, final int maxLength) {
-
         textField.textProperty().addListener((ov, oldValue, newValue) -> {
                     if (textField.getText().length() > maxLength) {
                         String s = textField.getText().substring(0, maxLength);
@@ -21,7 +20,6 @@ public class TextFieldLimiter {
     }
 
     public static void addTextLimiterToTextArea(final TextArea textField, final int maxLength) {
-
         textField.textProperty().addListener((ov, oldValue, newValue) -> {
                     if (textField.getText().length() > maxLength) {
                         String s = textField.getText().substring(0, maxLength);

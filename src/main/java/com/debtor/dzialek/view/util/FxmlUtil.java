@@ -1,5 +1,6 @@
 package com.debtor.dzialek.view.util;
 
+import com.debtor.dzialek.model.enums.ViewFxmlPath;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -25,8 +26,8 @@ public class FxmlUtil {
         FxmlUtil.springContext = springContext;
     }
 
-    public static Pane loadFxml(String fxmlPath){
-        FXMLLoader fxmlLoader = new FXMLLoader(FxmlUtil.class.getResource(fxmlPath));
+    public static Pane loadFxml(ViewFxmlPath fxmlPath) {
+        FXMLLoader fxmlLoader = new FXMLLoader(FxmlUtil.class.getResource(fxmlPath.getFxmlPath()));
         fxmlLoader.setControllerFactory(springContext::getBean);
         fxmlLoader.setResources(getResourceBundle());
         try {
@@ -35,12 +36,12 @@ public class FxmlUtil {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        log.warn("loading fxml resource from {} failed!", fxmlPath);
+        log.error("loading fxml resource from {} failed!", fxmlPath);
         return null;
     }
 
     public static void openAddNewDebtorStage() {
-        Parent rootNode = FxmlUtil.loadFxml(ADD_DEBTOR.getFxmlPath());
+        Parent rootNode = FxmlUtil.loadFxml(ADD_DEBTOR);
         Stage stage = new Stage();
         stage.setTitle(getMessage("view.add.debtor.window.title"));
         stage.setScene(new Scene(rootNode, 800, 550));
@@ -49,7 +50,7 @@ public class FxmlUtil {
         stage.show();
     }
 
-    public static void openMainStageForGivenScene(Stage primaryStage, Parent rootNode){
+    public static void openMainStageForGivenScene(Stage primaryStage, Parent rootNode) {
         primaryStage.setTitle(getMessage("view.main.window.title"));
         primaryStage.setScene(new Scene(rootNode, 1200, 800));
         primaryStage.setResizable(false);

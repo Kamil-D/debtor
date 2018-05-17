@@ -35,7 +35,7 @@ public class Main extends Application {
 //        FxmlUtil.loadFxml(DEBTOR_MAIN_FXML);
 //        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(DEBTOR_MAIN_FXML));
 //        fxmlLoader.setControllerFactory(springContext::getBean);
-        rootNode = FxmlUtil.loadFxml(MAIN_VIEW.getFxmlPath());
+        rootNode = FxmlUtil.loadFxml(MAIN_VIEW);
     }
 
     @Override
