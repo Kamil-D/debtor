@@ -28,7 +28,7 @@
 
                 <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="150.0" spacing="10.0">
                     <VBox alignment="CENTER_RIGHT" prefHeight="60.0" prefWidth="120.0">
-                        <Label text="%view.add.debtor.window.conractNumber.label" />
+                        <Label text="%view.add.debtor.window.contractNumber.label" />
                     </VBox>
                     <TextField fx:id="contractNumberField" />
                     <padding>
@@ -79,7 +79,7 @@
             <VBox alignment="TOP_CENTER" prefHeight="420.0" prefWidth="400.0">
 
                 <VBox alignment="TOP_CENTER" prefHeight="210.0" prefWidth="400.0">
-                    <Label alignment="TOP_CENTER" text="%view.add.debtor.window.adress1.label">
+                    <Label alignment="TOP_CENTER" text="%view.add.debtor.window.address1.label">
                         <font>
                             <Font size="17.0" />
                         </font>
@@ -88,23 +88,23 @@
                         </VBox.margin>
                     </Label>
 
-                    <TextField fx:id="streetFirstField" promptText="Ulica">
+                    <TextField fx:id="streetFirstField" promptText="%view.add.debtor.window.address1.street">
                         <VBox.margin>
                             <Insets bottom="20.0" />
                         </VBox.margin></TextField>
 
-                    <TextField fx:id="streetNumberFirstField" promptText="Numer ulicy i mieszkania">
+                    <TextField fx:id="streetNumberFirstField" promptText="%view.add.debtor.window.address1.streetNumber">
                         <VBox.margin>
                             <Insets bottom="20.0" />
                         </VBox.margin></TextField>
 
                     <HBox alignment="CENTER_LEFT" prefWidth="350.0" spacing="10.0">
-                        <TextField fx:id="codeFirstField" prefWidth="100.0" promptText="Kod pocztowy">
+                        <TextField fx:id="codeFirstField" prefWidth="100.0" promptText="%view.add.debtor.window.address1.postCode">
                             <VBox.margin>
                                 <Insets bottom="20.0" />
                             </VBox.margin></TextField>
 
-                        <TextField fx:id="cityFirstField" prefWidth="250.0" promptText="Miasto"/>
+                        <TextField fx:id="cityFirstField" prefWidth="250.0" promptText="%view.add.debtor.window.address1.city"/>
                     </HBox>
 
                     <padding>
@@ -125,23 +125,23 @@
                         </VBox.margin>
                     </Label>
 
-                    <TextField fx:id="streetSecondField" promptText="Ulica">
+                    <TextField fx:id="streetSecondField" promptText="%view.add.debtor.window.address2.street">
                         <VBox.margin>
                             <Insets bottom="20.0" />
                         </VBox.margin></TextField>
 
-                    <TextField fx:id="streetNumberSecondField" promptText="Numer ulicy i mieszkania">
+                    <TextField fx:id="streetNumberSecondField" promptText="%view.add.debtor.window.address2.streetNumber">
                         <VBox.margin>
                             <Insets bottom="20.0" />
                         </VBox.margin></TextField>
 
                     <HBox alignment="CENTER_LEFT" prefWidth="350.0" spacing="10.0">
-                        <TextField fx:id="codeSecondField" prefWidth="100.0" promptText="Kod pocztowy">
+                        <TextField fx:id="codeSecondField" prefWidth="100.0" promptText="%view.add.debtor.window.address2.postCode">
                             <VBox.margin>
                                 <Insets bottom="20.0" />
                             </VBox.margin></TextField>
 
-                        <TextField fx:id="citySecondField" prefWidth="250.0" promptText="Miasto"/>
+                        <TextField fx:id="citySecondField" prefWidth="250.0" promptText="%view.add.debtor.window.address2.city"/>
                     </HBox>
 
                     <padding>
