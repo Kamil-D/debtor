@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -24,6 +25,14 @@ public class FxmlUtil {
 
     public static void init(ConfigurableApplicationContext springContext) {
         FxmlUtil.springContext = springContext;
+    }
+
+    public static void openMainStageForGivenScene(Stage primaryStage, Parent rootNode) {
+        primaryStage.setTitle(getMessage("view.main.window.title"));
+        primaryStage.setScene(new Scene(rootNode, 1200, 800));
+        primaryStage.setResizable(false);
+        primaryStage.centerOnScreen();
+        primaryStage.show();
     }
 
     public static Pane loadFxml(ViewFxmlPath fxmlPath) {
@@ -47,15 +56,8 @@ public class FxmlUtil {
         stage.setScene(new Scene(rootNode, 800, 550));
         stage.setResizable(false);
         stage.centerOnScreen();
-        stage.show();
-    }
-
-    public static void openMainStageForGivenScene(Stage primaryStage, Parent rootNode) {
-        primaryStage.setTitle(getMessage("view.main.window.title"));
-        primaryStage.setScene(new Scene(rootNode, 1200, 800));
-        primaryStage.setResizable(false);
-        primaryStage.centerOnScreen();
-        primaryStage.show();
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.showAndWait();
     }
 
 }
