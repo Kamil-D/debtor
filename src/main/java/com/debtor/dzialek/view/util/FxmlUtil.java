@@ -53,7 +53,9 @@ public class FxmlUtil {
         Parent rootNode = FxmlUtil.loadFxml(ADD_DEBTOR);
         Stage stage = new Stage();
         stage.setTitle(getMessage("view.add.debtor.window.title"));
-        stage.setScene(new Scene(rootNode, 800, 550));
+        Scene scene = new Scene(rootNode, 800, 550);
+        scene.getStylesheets().add("/application.css");
+        stage.setScene(scene);
         stage.setResizable(false);
         stage.centerOnScreen();
         stage.initModality(Modality.APPLICATION_MODAL);
