@@ -30,7 +30,7 @@ public class MainDebtorController implements Initializable{
     }
 
     public void closeApplication() {
-        Optional<ButtonType> result = DialogsUtil.confirmExitApplicationDialog();
+        Optional<ButtonType> result = DialogsUtil.confirmOperationDialog("view.exit.title", "view.exit.header");
         if(result.get()==ButtonType.OK){
             Platform.exit();
             System.exit(0);
