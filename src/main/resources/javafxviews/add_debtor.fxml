@@ -99,7 +99,7 @@
                         </VBox.margin></TextField>
 
                     <HBox alignment="CENTER_LEFT" prefWidth="350.0" spacing="10.0">
-                        <TextField fx:id="codeFirstField" prefWidth="100.0" promptText="%view.add.debtor.window.address1.postCode">
+                        <TextField fx:id="zipCodeFirstField" prefWidth="100.0" promptText="%view.add.debtor.window.address1.zipCode">
                             <VBox.margin>
                                 <Insets bottom="20.0" />
                             </VBox.margin></TextField>
@@ -136,7 +136,7 @@
                         </VBox.margin></TextField>
 
                     <HBox alignment="CENTER_LEFT" prefWidth="350.0" spacing="10.0">
-                        <TextField fx:id="codeSecondField" prefWidth="100.0" promptText="%view.add.debtor.window.address2.postCode">
+                        <TextField fx:id="zipCodeSecondField" prefWidth="100.0" promptText="%view.add.debtor.window.address2.zipCode">
                             <VBox.margin>
                                 <Insets bottom="20.0" />
                             </VBox.margin></TextField>

@@ -44,7 +44,7 @@ public class AddDebtorController implements Initializable {
     TextField streetNumberFirstField;
 
     @FXML
-    TextField codeFirstField;
+    TextField zipCodeFirstField;
 
     @FXML
     TextField cityFirstField;
@@ -56,7 +56,7 @@ public class AddDebtorController implements Initializable {
     TextField streetNumberSecondField;
 
     @FXML
-    TextField codeSecondField;
+    TextField zipCodeSecondField;
 
     @FXML
     TextField citySecondField;
@@ -81,8 +81,8 @@ public class AddDebtorController implements Initializable {
                 emptyTextFieldBinding(contractNumberField),
                 emptyTextFieldBinding(firstNameField),
                 emptyTextFieldBinding(lastNameField),
-                textFieldIsNotEmptyAndMatchRegex(codeFirstField, codePattern),
-                textFieldIsNotEmptyAndMatchRegex(codeSecondField, codePattern),
+                textFieldIsNotEmptyAndMatchRegex(zipCodeFirstField, codePattern),
+                textFieldIsNotEmptyAndMatchRegex(zipCodeSecondField, codePattern),
                 textFieldIsNotEmptyAndMatchRegex(phoneNumberField, phoneNumberPattern)};
 
         BooleanBinding disableAddDebtorButton = any(nameTabBindings);
@@ -123,11 +123,11 @@ public class AddDebtorController implements Initializable {
         addTextLimiterToTextArea(noteField, 500);
         addTextLimiterToTextField(streetFirstField, 50);
         addTextLimiterToTextField(streetNumberFirstField, 10);
-        addTextLimiterToTextField(codeFirstField, 6);
+        addTextLimiterToTextField(zipCodeFirstField, 6);
         addTextLimiterToTextField(cityFirstField, 70);
         addTextLimiterToTextField(streetSecondField, 50);
         addTextLimiterToTextField(streetNumberSecondField, 10);
-        addTextLimiterToTextField(codeSecondField, 6);
+        addTextLimiterToTextField(zipCodeSecondField, 6);
         addTextLimiterToTextField(citySecondField, 70);
     }
 
