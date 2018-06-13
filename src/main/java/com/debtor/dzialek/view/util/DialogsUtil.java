@@ -9,10 +9,10 @@ import static com.debtor.dzialek.util.MessageProvider.getResourceBundle;
 
 public class DialogsUtil {
 
-    public static Optional<ButtonType> confirmExitApplicationDialog() {
+    public static Optional<ButtonType> confirmOperationDialog(String titleTextPath, String headerTextPath) {
         Alert confirmationDialog = new Alert(Alert.AlertType.CONFIRMATION);
-        confirmationDialog.setTitle(getResourceBundle().getString("view.exit.title"));
-        confirmationDialog.setHeaderText(getResourceBundle().getString("view.exit.header"));
+        confirmationDialog.setTitle(getResourceBundle().getString(titleTextPath));
+        confirmationDialog.setHeaderText(getResourceBundle().getString(headerTextPath));
         Optional<ButtonType> result = confirmationDialog.showAndWait();
         return result;
     }
