@@ -85,8 +85,7 @@ public class AddDebtorController implements Initializable {
                 textFieldIsNotEmptyAndMatchRegex(codeSecondField, codePattern),
                 textFieldIsNotEmptyAndMatchRegex(phoneNumberField, phoneNumberPattern)};
 
-        BooleanBinding disableAddDebtorButton = any(nameTabBindings);
-        return disableAddDebtorButton;
+        return any(nameTabBindings);
     }
 
     private BooleanBinding emptyTextFieldBinding(TextField textField) {
